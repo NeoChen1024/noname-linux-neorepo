@@ -1,0 +1,21 @@
+name=busybox
+version=1.27.1
+deps="musl ncurses"
+desc="The Swiss Army Knife of Embedded Linux"
+source="
+https://busybox.net/downloads/busybox-$version.tar.bz2
+"
+
+ext() {
+	cp $srcdir/giantrock-busybox.cfg $name-$version
+}
+
+build() {
+	cd $name-$version
+	make
+	install -Dm755 busybox "$pkgdir"/usr/bin/busybox
+	install -Dm644 docs/busybox.1 "$pkgdir"/usr/share/man/man1/busybox.1
+	for doc in BusyBox.html BusyBox.txt; do
+		install -Dm644 docs/$doc "$pkgdir"/usr/share/doc/$pkgname/$doc
+	done
+}
