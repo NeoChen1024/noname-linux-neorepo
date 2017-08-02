@@ -1,0 +1,16 @@
+name=grml-zshrc
+version=git
+deps="zsh"
+desc="Grml's zshrc"
+
+ext()
+{
+	cd "$srcdir"
+	git clone https://github.com/grml/grml-etc-core.git
+}
+
+build()
+{
+	mkdir -p "$pkgdir"/etc/zsh
+	cp "$srcdir"/grml-etc-core/etc/zsh/* "$pkgdir"/etc/zsh/
+}

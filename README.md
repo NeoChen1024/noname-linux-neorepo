@@ -4,5 +4,8 @@
 
 List of Packages:
 
-+ Busybox
-+ Darkhttpd
++ busybox
++ darkhttpd
++ zsh
++ grml-zshrc
+

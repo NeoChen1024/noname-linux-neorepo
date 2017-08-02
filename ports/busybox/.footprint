@@ -1,9 +1,0 @@
-usr/bin|755|0|0|directory
-usr/share/doc/BusyBox.html|644|0|0|regular file
-usr/share/doc/BusyBox.txt|644|0|0|regular file
-usr/share/doc|755|0|0|directory
-usr/share/man/man1/busybox.1|644|0|0|regular file
-usr/share/man/man1|755|0|0|directory
-usr/share/man|755|0|0|directory
-usr/share|755|0|0|directory
-usr|755|0|0|directory

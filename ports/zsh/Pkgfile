@@ -1,0 +1,16 @@
+name=zsh
+version=5.3.1
+deps="musl ncurses"
+desc="The Z Shell"
+source="https://downloads.sourceforge.net/project/zsh/zsh/$version/zsh-$version.tar.xz"
+
+ext() {
+	cd $srcdir/zsh-$version
+	./configure --prefix=/
+}
+
+build() {
+	cd $name-$version
+	make
+	make DESTDIR="$pkgdir" install
+}
