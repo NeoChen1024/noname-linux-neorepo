@@ -11,9 +11,10 @@ ext() {
 build() {
 	cd $name-$version
 	make
-	install -Dm755 busybox "$pkgdir"/usr/bin/busybox
-	install -Dm644 docs/busybox.1 "$pkgdir"/usr/share/man/man1/busybox.1
+	install -Dm755 busybox_unstripped "$pkgdir"/lib/busybox_unstripped
+	install -Dm755 busybox "$pkgdir"/bin/busybox
+	install -Dm644 docs/busybox.1 "$pkgdir"/share/man/man1/busybox.1
 	for doc in BusyBox.html BusyBox.txt; do
-		install -Dm644 docs/$doc "$pkgdir"/usr/share/doc/$pkgname/$doc
+		install -Dm644 docs/$doc "$pkgdir"/share/doc/$pkgname/$doc
 	done
 }
