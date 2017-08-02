@@ -2,12 +2,10 @@ name=busybox
 version=1.27.1
 deps="musl ncurses"
 desc="The Swiss Army Knife of Embedded Linux"
-source="
-https://busybox.net/downloads/busybox-$version.tar.bz2
-"
+source="https://busybox.net/downloads/busybox-$version.tar.bz2"
 
 ext() {
-	cp $srcdir/giantrock-busybox.cfg $name-$version
+	cp ../giantrock-busybox.cfg $name-$version/.config
 }
 
 build() {
