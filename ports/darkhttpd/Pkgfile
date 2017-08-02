@@ -1,0 +1,13 @@
+name=darkhttpd
+version=1.12
+deps="musl"
+desc="A Simple HTTP Server"
+
+ext() {
+	curl -o darkhttpd.c https://unix4lyfe.org/gitweb/darkhttpd/blob_plain/HEAD:/darkhttpd.c
+}
+
+build() {
+	gcc -O3 -Wall --static -o darkhttpd darkhttpd.c
+	install -Dm0755 darkhttpd $pkgdir/bin/darkhttpd
+}
